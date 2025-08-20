@@ -1,0 +1,29 @@
+@import "lib_01.css";
+@import "lib_02.css";
+@import "lib_03.css";
+
+.theme-gollog .breadcrumb-item:not(:first-child):before{
+    content: '' !Important;
+    margin: calc(-0.6em / 2) auto auto auto !important;
+}
+
+.theme-gollog .breadcrumb {
+    background-color: transparent !important;
+}
+
+.theme-gollog .fade {
+    transition: initial !important;
+}
+.theme-gollog .fade:not(.show) {
+    opacity: initial;
+}
+.theme-gollog input{
+    box-shadow: none !important;
+}
+.theme-gollog .form-control {
+    height: auto;
+    padding: initial;
+}
+.theme-gollog .form-check-label {
+    display: inline-block;
+}

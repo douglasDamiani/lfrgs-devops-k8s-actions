@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="33" height="33" viewBox="0 0 33 33">
+    <defs>
+        <path id="prefix__a" d="M14.258 11.872L12.872 13.224 16.1 16.372 12.872 19.52 14.258 20.872 18.872 16.372z"/>
+    </defs>
+    <g fill="none" fill-rule="evenodd" transform="translate(1 1)">
+        <circle cx="15.872" cy="15.872" r="15.872" fill="#FFF" stroke="#2B2B2B" stroke-width=".5" transform="rotate(90 15.872 15.872)"/>
+        <use fill="#000" transform="rotate(90 15.872 16.372)" xlink:href="#prefix__a"/>
+    </g>
+</svg>

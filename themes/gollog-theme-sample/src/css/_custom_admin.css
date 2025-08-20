@@ -1,0 +1,31 @@
+@media (min-width: 576px) {
+    html:not(#__):not(#___) .page-editor__wrapper--padded-start {
+        padding-left: 322px;
+        padding-right: 280px;
+        margin-right: 0 !important;
+    }
+}
+
+
+@media (min-width: 576px) {
+    .modal-dialog {
+        max-width: initial !important;
+        margin: initial !important;
+        position: absolute !important;
+    }
+}
+
+
+html:not(#__):not(#___) .cadmin .page-editor__sidebar {
+    top: 121px !important;
+}
+html:not(#__):not(#___) .cadmin .page-editor__item-configuration-sidebar--open {
+    top: 121px !important;
+}
+
+.portlet-topper-toolbar {
+    margin: -34px 1px 0 0 !important;
+    width: 64px !important;
+    display: block;
+    height: 24px !important;
+}

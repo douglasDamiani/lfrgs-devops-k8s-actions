@@ -2,6 +2,7 @@
     "private": true,
     "workspaces": {
         "packages": [
+            "themes/gollog-theme",
             "client-extensions/liferay-sample-global-css",
             "client-extensions/liferay-sample-custom-element-2"
         ]

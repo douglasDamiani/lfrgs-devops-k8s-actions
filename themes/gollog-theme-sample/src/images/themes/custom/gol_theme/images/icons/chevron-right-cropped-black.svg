@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="17.95652198791504" height="22.82608699798584" style=""><rect id="backgroundrect" width="100%" height="100%" x="0" y="0" fill="none" stroke="none" style="" class=""/>
+    <defs>
+        <path id="prefix__a" fill="#2b2b2b" d="M2.31 0.688L0 3.035 5.38 8.5 0 13.965 2.31 16.313 10 8.5z"/>
+    </defs>
+
+<g class="currentLayer" style=""><title>Layer 1</title><g fill="none" fill-rule="evenodd" id="svg_1" class="">
+        <mask id="prefix__b" fill="#fff">
+            <use xlink:href="#prefix__a" id="svg_2"/>
+        </mask>
+        <use fill="#ff5e00" xlink:href="#prefix__a" y="7.331098198890686" x="-4.310901165008545" id="svg_3" transform="matrix(1.76093, 0, 0, 1.62578, 7.7988, -14.7749)"/>
+        <g mask="url(#prefix__b)" id="svg_4">
+            <path fill="#2B2B2B" d="M-12.999319076538086,30.47232222557068 H9.702062606811523 V42.665651082992554 H9.702062606811523 z" id="svg_5"/>
+        </g>
+    </g></g></svg>
