@@ -19,35 +19,35 @@ spec:
     spec:
       containers:
       - name: liferay
-        image: lfrgs-devops-k8s-actions/liferay:1.0
+        image: dliferay/lfrgs-devops-k8s-actions:b5449b17bf175972ba0b252659170640fc0b291b
         securityContext:
           runAsNonRoot: false
           runAsUser: 1000
         resources:
           requests:
-            memory: "1Gi"
-            cpu: "100m"
-          limits:
-            memory: "2Gi"
+            memory: "4Gi"
             cpu: "2000m"
+          limits:
+            memory: "5Gi"
+            cpu: "3000m"
         readinessProbe:
           httpGet:
-            path: /web/guest
+            path: /c/portal/layout
             port: 8080
             scheme: HTTP
-          initialDelaySeconds: 60
-          timeoutSeconds: 25
-          periodSeconds: 30
-          failureThreshold: 3 
+          initialDelaySeconds: 120
+          timeoutSeconds: 5
+          periodSeconds: 15
+          failureThreshold: 3
         livenessProbe:
           httpGet:
-            path: /web/guest
+            path: /c/portal/layout
             port: 8080
             scheme: HTTP
-          initialDelaySeconds: 15
-          timeoutSeconds: 25
-          periodSeconds: 10
-          failureThreshold: 3 
+          initialDelaySeconds: 480
+          timeoutSeconds: 5
+          periodSeconds: 60
+          failureThreshold: 3
         env:
           - name: LIFERAY_DISABLE_TRIAL_LICENSE
             value: "true"

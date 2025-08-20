@@ -8,6 +8,11 @@
 
 <#assign isAutenticacao = friendlyURL == '/autenticacao'>
 
+
+<script>
+    console.log("Theme Gollog")
+<script>
+
 <#assign isEditMode = false>
 <#if currentURL?index_of("p_l_mode=edit") != -1>
     <#assign isEditMode = true>
