@@ -10,8 +10,8 @@
 
 
 <script>
-    console.log("Theme Gollog")
-<script>
+    console.log("Theme Gollog v2")
+</script>
 
 <#assign isEditMode = false>
 <#if currentURL?index_of("p_l_mode=edit") != -1>

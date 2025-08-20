@@ -19,7 +19,7 @@ spec:
     spec:
       containers:
       - name: liferay
-        image: dliferay/lfrgs-devops-k8s-actions:b5449b17bf175972ba0b252659170640fc0b291b
+        image: dliferay/lfrgs-devops-k8s-actions:fa7b9f624e0b9debbb592e620a866e44b8718780
         securityContext:
           runAsNonRoot: false
           runAsUser: 1000
