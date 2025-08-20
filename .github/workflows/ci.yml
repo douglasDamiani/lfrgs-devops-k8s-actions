@@ -32,6 +32,8 @@ jobs:
       - name: Build and Push Docker Image
         uses: docker/build-push-action@v5
         with:
-          context: .
+          context: ./build/docker
           push: true
-          tags: ${{ secrets.DOCKERHUB_USERNAME }}/meu-app:latest
+          tags: |
+            ${{ secrets.DOCKERHUB_USERNAME }}/lfrgs-devops-k8s-actions:${{ github.sha }}
+            ${{ secrets.DOCKERHUB_USERNAME }}/lfrgs-devops-k8s-actions:latest
