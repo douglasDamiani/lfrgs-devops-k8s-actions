@@ -2,7 +2,7 @@ version: '3.8'
 
 services:
   liferay:
-    image: minimal/liferay
+    image: lfrgs-devops-k8s-actions/liferay:1.0
     deploy:
       resources:
         limits:
@@ -48,7 +48,7 @@ services:
       timeout: 10s
 
   database:
-    image: minimal/database
+    image: lfrgs-devops-k8s-actions/mysql:1.0
     build:
       dockerfile: Dockerfile
       context: docker/database

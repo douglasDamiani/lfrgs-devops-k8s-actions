@@ -1,0 +1,85 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: liferay-deployment
+  labels:
+    app: ms-service
+    run: liferay
+spec:
+  selector:
+    matchLabels:
+      run: liferay
+  strategy:
+    type: RollingUpdate
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        run: liferay
+    spec:
+      containers:
+      - name: liferay
+        image: lfrgs-devops-k8s-actions/liferay:1.0
+        securityContext:
+          runAsNonRoot: false
+          runAsUser: 1000
+        resources:
+          requests:
+            memory: "1Gi"
+            cpu: "100m"
+          limits:
+            memory: "2Gi"
+            cpu: "2000m"
+        readinessProbe:
+          httpGet:
+            path: /web/guest
+            port: 8080
+            scheme: HTTP
+          initialDelaySeconds: 60
+          timeoutSeconds: 25
+          periodSeconds: 30
+          failureThreshold: 3 
+        livenessProbe:
+          httpGet:
+            path: /web/guest
+            port: 8080
+            scheme: HTTP
+          initialDelaySeconds: 15
+          timeoutSeconds: 25
+          periodSeconds: 10
+          failureThreshold: 3 
+        env:
+          - name: LIFERAY_DISABLE_TRIAL_LICENSE
+            value: "true"
+          - name: LIFERAY_JPDA_ENABLED
+            value: "true"
+          - name: JAVA_VERSION
+            value: 'zulu21'
+          - name: LIFERAY_JVM_OPTS
+            value: '-Xmx2g -Xms1g'
+          - name: LIFERAY_VIRTUAL_PERIOD_HOSTS_PERIOD_VALID_PERIOD_HOSTS
+            value: '*'
+          - name: LIFERAY_PASSWORDS_PERIOD_DEFAULT_PERIOD_POLICY_PERIOD_CHANGE_PERIOD_REQUIRED
+            value: 'false'
+          - name: LIFERAY_COMPANY_PERIOD_SECURITY_PERIOD_SEND_PERIOD_PASSWORD_PERIOD_RESET_PERIOD_LINK
+            value: 'false'
+          - name: LIFERAY_WORKSPACE_ENVIRONMENT
+            value: dev
+          - name: LIFERAY_JDBC_PERIOD_DEFAULT_PERIOD_USERNAME
+            value: root
+          - name: LIFERAY_JDBC_PERIOD_DEFAULT_PERIOD_PASSWORD
+            value: root
+          - name: LIFERAY_JDBC_PERIOD_DEFAULT_PERIOD_URL
+            value: jdbc:mysql://mysql:3306/lportal?characterEncoding=UTF-8&dontTrackOpenResources=true&holdResultsOpenOverStatementClose=true&serverTimezone=GMT&useFastDateParsing=false&useUnicode=true
+          - name: LIFERAY_JDBC_PERIOD_DEFAULT_PERIOD_DRIVER_UPPERCASEC_LASS_UPPERCASEN_AME
+            value: com.mysql.cj.jdbc.Driver
+          - name: LIFERAY_RETRY_PERIOD_JDBC_PERIOD_ON_PERIOD_STARTUP_PERIOD_DELAY
+            value: '15'
+          - name: LIFERAY_RETRY_PERIOD_JDBC_PERIOD_ON_PERIOD_STARTUP_PERIOD_MAX_PERIOD_RETRIES
+            value: '20'
+
+        ports:
+        - containerPort: 8080
+          name: http
+          protocol: TCP
+      dnsPolicy: ClusterFirst
