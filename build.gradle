@@ -1,0 +1,5 @@
+// Check GETTING_STARTED.markdown for information regarding usage.
+
+plugins {
+  id("io.github.devdamiani.liferay-minimal-env") version "0.8.4"
+}
